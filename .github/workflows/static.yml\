@@ -1,0 +1,38 @@
+<html>
+<body bgcolor="#1C2833 ">
+<style>
+
+form{
+    display:flex;
+    flex-direction:column;
+    width:300px;
+}
+
+input{
+    margin-bottom:30px;
+    width:100%;
+    height:40px;
+    border-radius:5px;
+    border-color:#2ECC71 ;
+}
+
+
+</style>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  <input class="int" type="text" name="frame1" placeholder="Введите номер">
+  <input class="int2" type="text" name="frame2" placeholder="сообщение которое придёт вам на номер">
+  <input type="submit">
+</form>
+
+
+<?php
+$to = "levpronin94@gmail.com";
+$subject = "My subject";
+$txt = $_POST["frame1"];
+$txt2 = $_POST["frame2"];
+
+mail($to,$subject,$txt,$txt2);
+?>
+
+</body>
+</html>
